@@ -16,11 +16,9 @@ set-location cert:\LocalMachine\root
 
 #iterate through the Trusted Root Certification Authorities Store to locate cert by thumbprint
 $cert =  Get-ChildItem -Recurse | Where-Object  {$_.thumbprint -eq "<CERTIFICATE THUMBRPINT>"}
-If($cert){
-    #If cert Found Do Nothing
-}
-    else {
-        #if certifiacte not found, load certificate to store
-        Import-Certificate -FilePath "C:\<CERTPATH>" -CertStoreLocation Cert:\LocalMachine\Root
 
-    }
+#if certifiacte not found, load certificate to store
+If(-not $cert){
+        Import-Certificate -FilePath "C:\<CERTPATH>" -CertStoreLocation Cert:\LocalMachine\Root
+}
+
