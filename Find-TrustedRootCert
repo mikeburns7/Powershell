@@ -11,11 +11,8 @@
         Author: Mike Burns
 #>
 
-#set powershell's location to the Trusted Root Certification Authorities Store
-set-location cert:\LocalMachine\root
-
 #iterate through the Trusted Root Certification Authorities Store to locate cert by thumbprint
-$cert =  Get-ChildItem -Recurse | Where-Object  {$_.thumbprint -eq "<CERTIFICATE THUMBRPINT>"}
+$cert = Get-ChildItem -LiteralPath cert:\LocalMachine\root | Where-Object  {$_.thumbprint -eq "<CERTIFICATE THUMBRPINT>"}
 
 #if certifiacte not found, load certificate to store
 If(-not $cert){
