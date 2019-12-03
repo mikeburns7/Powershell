@@ -2,7 +2,7 @@
       .SYNOPSIS
         Import AD user and attributes from CSV 
       .DESCRIPTION
-        The following script import a list of usesr and their associated attributes into Active Directory. This is useful for building or populating greenfield domains.
+        The following script import a list of users and their associated attributes into Active Directory. This is useful for building or populating greenfield domains.
       .NOTES
         Release Date: 2019-12-3
         Updated: 2019-12-3
