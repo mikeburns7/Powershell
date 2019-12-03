@@ -11,8 +11,8 @@
 
 
 Import-Module activedirectory
-Import-Csv "C:\Users\Administrator\Desktop\book1.csv" | ForEach-Object {
-$upn = $_.SamAccountName + "@burns365.local"
+Import-Csv "<ENTER PATH OF CSV FILE" | ForEach-Object {
+$upn = $_.SamAccountName + "<@DOMAIN.TLD>"
 $uname = $_.LastName + " " + $_.FirstName
 New-ADUser -Name $uname `
 -DisplayName $uname `
