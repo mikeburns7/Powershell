@@ -11,7 +11,7 @@
 
 
 Import-Module activedirectory
-Import-Csv "<ENTER PATH OF CSV FILE" | ForEach-Object {
+Import-Csv "<ENTER PATH OF CSV FILE>" | ForEach-Object {
 $upn = $_.SamAccountName + "<@DOMAIN.TLD>"
 $uname = $_.LastName + " " + $_.FirstName
 New-ADUser -Name $uname `
