@@ -9,6 +9,7 @@
         Release Date: 2019-11-11
         Updated: 2019-11-11
         Author: Mike Burns
+#>
 
 #iterate through the Trusted Root Certification Authorities Store to locate cert by thumbprint
 $cert = Get-ChildItem -LiteralPath cert:\LocalMachine\root | Where-Object  {$_.thumbprint -eq "<CERTIFICATE THUMBRPINT>"}
