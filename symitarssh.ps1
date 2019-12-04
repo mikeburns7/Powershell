@@ -2,7 +2,7 @@
     .SYNOPSIS
         This script will enable the Symitar Client to use SSH protocol when communicating with the Symitar server 
     .DESCRIPTION
-        The script will check the client architecture.Tthen if the given registry key exists, the script will modify the registry key if not equal to 1. 
+        The script will check the client architecture. Ten if the given registry key exists, the script will modify the registry key if not equal to 1. 
         Setting the UseSSH registry key value ot 1 will enable SSH for the Symitar client. 
     .PARAMETERS
         None
