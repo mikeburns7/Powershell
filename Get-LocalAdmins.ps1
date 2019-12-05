@@ -17,3 +17,6 @@
 #>
 
 net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4
+
+#output results in a csv like format
+net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4 | ForEach-Object {$_ + ',' }
