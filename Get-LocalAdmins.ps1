@@ -12,11 +12,13 @@
     .NOTES
         Version:        1.0
         Release Date: 2019-12-5
-        Updated: 2019-12-5
+        Updated: 2019-12-15
         Author: Mike Burns
 #>
 
-net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4
+#net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4 
 
 #output results in a csv like format
-net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4 | ForEach-Object {$_ + ',' }
+$admin=net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4
+$administrator = [string]::Join(';',$admin)
+$administrator
