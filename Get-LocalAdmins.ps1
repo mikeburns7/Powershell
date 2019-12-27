@@ -19,6 +19,6 @@
 #net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4 
 
 #output results in a csv like format
-$admin=net localgroup administrators | where {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4
+$admin=net localgroup administrators | Where-Object {$_ -AND $_ -notmatch "command completed successfully"} | select -skip 4
 $administrator = [string]::Join(';',$admin)
 $administrator
