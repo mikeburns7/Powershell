@@ -1,5 +1,6 @@
 #This is a playbook, not a script
 #Discover where roles currently exist
+https://docs.microsoft.com/en-us/powershell/module/addsadministration/move-addirectoryserveroperationmasterrole?view=win10-ps
 $Domain = <ENTER DOMAIN ex. contoso.local>
 Get-ADForest $Domain | ft DomainNamingMaster, SchemaMaster
 Get-ADDomain $Domain | ft InfrastructureMaster, PDCEmulator, RIDMaster
