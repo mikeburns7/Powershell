@@ -1,0 +1,12 @@
+#This is a playbook, not a script
+#Discover where roles currently exist
+$Domain = <ENTER DOMAIN ex. contoso.local>
+Get-ADForest $Domain | ft DomainNamingMaster, SchemaMaster
+Get-ADDomain $Domain | ft InfrastructureMaster, PDCEmulator, RIDMaster
+
+
+
+
+#Transfer roles to a specific domain controller
+$Server = Get-ADDomainController -Identity "<ENTER SERVER FQDN>"
+Move-ADDirectoryServerOperationMasterRole -Identity $Server –OperationMasterRole DomainNamingMaster,PDCEmulator,RIDMaster,SchemaMaster,InfrastructureMaster
