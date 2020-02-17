@@ -4,6 +4,7 @@ https://docs.microsoft.com/en-us/powershell/module/addsadministration/move-addir
 $Domain = <ENTER DOMAIN ex. contoso.local>
 Get-ADForest $Domain | ft DomainNamingMaster, SchemaMaster
 Get-ADDomain $Domain | ft InfrastructureMaster, PDCEmulator, RIDMaster
+NetDOM /query FSMO
 
 
 
