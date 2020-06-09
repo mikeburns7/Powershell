@@ -5,7 +5,7 @@
 
 $files = @(Get-Childitem C:\Windows\System32\GroupPolicy -recurse -filter "*.pol")
 
-$auditpolfile = "C:\users\mike.burns\Desktop\AudtPolOutput.txt"
+$auditpolfile = "C:\users\mike\Desktop\AudtPolOutput.txt"
 New-Item $auditpolfile
 
 foreach ($file in $files) {
@@ -22,7 +22,7 @@ foreach ($file in $files) {
 <# 
 $files = @(Get-Childitem C:\Windows\System32\GroupPolicy -recurse -filter "*.inf")
 
-$GptTmplfile = "C:\users\mike.burns\Desktop\GptTmpl.txt"
+$GptTmplfile = "C:\users\mike\Desktop\GptTmpl.txt"
 New-Item $GptTmplfile
 
 foreach ($file in $files) {
