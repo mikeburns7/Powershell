@@ -1,0 +1,2 @@
+^((?:(?!smtp:).)*smtp:)|smtp:|@(.*?)(smtp:+?)|(@.*)|^(?!smtp:).*
+machtes everything except for string between smtp: and @
